@@ -2,6 +2,7 @@ FROM ruby:3.0.2
 
 ENV NODE_VERSION=14.17.5
 ENV BUNDLER_VERSION=2.2.22
+ENV RAKE_VERSION=13.0.6
 
 RUN apt-get update && \
   apt-get install --quiet --yes \
@@ -24,6 +25,7 @@ RUN npm --version
 
 RUN npm install --global yarn
 RUN gem install bundler --version ${BUNDLER_VERSION}
+RUN gem install rake --version ${RAKE_VERSION}
 
 WORKDIR /app
 ENV BUNDLE_PATH /gems

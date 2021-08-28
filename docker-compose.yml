@@ -15,10 +15,10 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgres://postgres:password@db:5432/postgres
     volumes:
       - .:/app
+    # environment:
+    #   - DATABASE_URL=postgres://postgres:password@db:5432/postgres
 
 volumes:
   dbdata:
